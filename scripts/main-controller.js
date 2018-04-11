@@ -38,7 +38,7 @@ angular
 			Country: "America",
 			City: "America/Monterrey",
 			Date_Time: new Date(),
-			Converted_Date_Time: new Date(),
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Monterrey").format('dddd, MMM Do YYYY h:mm a')
 		}];
 		
 		vm.newShares = {};
