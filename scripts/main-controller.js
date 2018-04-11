@@ -18,25 +18,25 @@ angular
 		vm.records = [{
 			Name: "Boo | Jaja | Lucio | Ellie | Chi | Myk | Cheska | Mongo",
 			Country: "Philippines",
-			City: "Somewhere",
+			City: "Asia/Manila",
 			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Manila").format('dddd, MMM Do YYYY h:mm a')
 		},
 		{
 			Name: "Ethan",
 			Country: "California",
-			City: "Girls We Unforgetable",
+			City: "America/Los_Angeles",
 			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Los_Angeles").format('dddd, MMM Do YYYY h:mm a')
 		},
 		{
 			Name: "Mie",
 			Country: "Japan",
-			City: "Japan",
+			City: "Asia/Tokyo",
 			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Tokyo").format('dddd, MMM Do YYYY h:mm a')
 		},
 		{
-			Name: "",
-			Country: "",
-			City: "",
+			Name: "Ice",
+			Country: "America",
+			City: "America/Monterrey",
 			Date_Time: new Date(),
 			Converted_Date_Time: new Date(),
 		}];
