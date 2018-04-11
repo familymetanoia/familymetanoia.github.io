@@ -12,7 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<!-- specifies title of the document -->
-		<title>Ragnarok MVP Tracker</title>
+		<title>Metanoia</title>
 		
 		<!-- CDN bootstrap-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,18 +22,13 @@
 		
 		<!-- Font Awesome -->
 		<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-		<!-- Area CSS -->
-		<link rel="stylesheet" href="C:\Users\weayubo\myOwn\Ragnarok MVP Tracker project\Areas\myApp\styles\main.css">
-		<link rel="stylesheet" href="C:\Users\weayubo\myOwn\Ragnarok MVP Tracker project\Areas\myApp\styles\share.css">
-		<link rel="stylesheet" href="C:\Users\weayubo\myOwn\Ragnarok MVP Tracker project\Areas\myApp\styles\members.css">
-		<link rel="stylesheet" href="C:\Users\weayubo\myOwn\Ragnarok MVP Tracker project\Areas\myApp\styles\tracker.css">
 		
+		<!-- Area CSS -->
 		<!--
-		<link rel="stylesheet" href="/styles/main.css">
-		<link rel="stylesheet" href="/styles/share.css">
-		<link rel="stylesheet" href="/styles/members.css">
-		<link rel="stylesheet" href="/styles/tracker.css">
+		<link rel="stylesheet" href="C:\Users\weayubo\myOwn\Ragnarok MVP Tracker project\Areas\myApp\styles\main.css">
 		-->
+		<link rel="stylesheet" href="/styles/main.css">
+		
 		
 	</head>
 
@@ -49,7 +44,7 @@
 			  <div class="collapse navbar-collapse" id="navbarColor01">
 				<ul class="navbar-nav mr-auto">
 				  <li class="nav-item active">
-					<a class="nav-link" href="#tracker">Tracker<span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="#tracker">Endless Tower<span class="sr-only">(current)</span></a>
 				  </li>
 				  <li class="nav-item">
 					<a class="nav-link" href="#shares">Shares</a>
@@ -67,71 +62,64 @@
 		</div>
 		
 		<!-- SHARE -->
-		<div id="shares" class="panel-body" ng-controller="share_controller as shareCtrlr">
+		<div id="shares" class="panel-body" ng-controller="main_controller as mainCtrlr">
 			<div class="container">
-				<h2>Shares</h2>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-						  <label class="btn btn-secondary active">
-							<input type="radio" name="options" id="option1" autocomplete="off" checked=""> All
-						  </label>
-						  <label class="btn btn-secondary">
-							<input type="radio" name="options" id="option2" autocomplete="off"> Open
-						  </label>
-						  <label class="btn btn-secondary">
-							<input type="radio" name="options" id="option3" autocomplete="off"> Close
-						  </label>
+				<h2>Endless Tower Schedule</h2>
+				<br>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+						<b>Server Time:</b> {{mainCtrlr.serverTime_Date | date:'EEEE, MMM d, y h:mm a'}}
 						</div>
-					</div>					
+						<div class="col">
+						</div>
+					</div>
 				</div>
+				<br>
 				<div class="row">
 					<div class="container col-lg-12">
 						<table class="table table-hover">
 						  <thead>
 							<tr>
-							  <th scope="col">Items</th>
-							  <th scope="col">Members</th>
-							  <th scope="col">Seller</th>
-							  <th scope="col">Raid_Date</th>
-							  <th scope="col">Status</th>
-							  <th scope="col">Closed_Date</th>
+							  <th scope="col">Name</th>
+							  <th scope="col">Country</th>
+							  <th scope="col">City</th>
+							  <th scope="col">Converted_Date_Time</th>
 							</tr>
 						  </thead>
 						  <tbody>
-							<tr class="table-secondary" ng-repeat="share in shareCtrlr.shares">
-								<td>{{share.Items}}</td>
-								<td>{{share.Members}}</td>
-								<td>{{share.Seller}}</td>
-								<td>{{share.Raid_Date | date}}</td>
-								<td>{{share.Status}}</td>
-								<td>{{share.Closed_Date | date}} </td>
+							<tr class="table-secondary" ng-repeat="record in mainCtrlr.records">
+								<td>{{record.Name}}</td>
+								<td>{{record.Country}}</td>
+								<td>{{record.City}}</td>
+								<td>{{record.Converted_Date_Time |  date:'EEEE, MMM d, y h:mm a'}}</td>
 							</tr>
 						  </tbody>
 						</table>
 					</div>
 				</div>
+				<!--
 				<div class="row">
 					<div class="container">
 						<h2>Form</h2>
-							<form novalidate name="share_form" ng-submit="shareCtrlr.addShares()">
+							<form novalidate name="share_form" ng-submit="mainCtrlr.addShares()">
 								<div class="form-group">
 									<div class="row">
 										<div class="col">
 											<label for="items">Items</label>
-											<input class="form-control" type="text" id="items" name="items" ng-model="shareCtrlr.newShares.Items" required ng-minlength="4"/>
+											<input class="form-control" type="text" id="items" name="items" ng-model="mainCtrlr.newShares.Items" required ng-minlength="4"/>
 											<span ng-show="share_form.items.$error.required" class="text-warning">Items is required.</span>
 											<span ng-show="share_form.items.$error.minlength" class="text-warning">Must be atleast 4 characters</span>
 										</div>
 										<div class="col">
 											<label for="members">Members</label>
-											<input class="form-control" type="text" id="members" name="members" ng-model="shareCtrlr.newShares.Members" required ng-minlength="4"/>
+											<input class="form-control" type="text" id="members" name="members" ng-model="mainCtrlr.newShares.Members" required ng-minlength="4"/>
 											<span ng-show="share_form.members.$error.required" class="text-warning">Members is required.</span>
 											<span ng-show="share_form.members.$error.minlength" class="text-warning">Must be atleast 4 characters</span>
 										</div>
 										<div class="col">
 											<label for="seller">Seller</label>
-											<input class="form-control" type="text" id="seller" name="seller" ng-model="shareCtrlr.newShares.Seller" required ng-minlength="4"/>
+											<input class="form-control" type="text" id="seller" name="seller" ng-model="mainCtrlr.newShares.Seller" required ng-minlength="4"/>
 											<span ng-show="share_form.seller.$error.required" class="text-warning">Seller is required.</span>
 											<span ng-show="share_form.seller.$error.minlength" class="text-warning">Must be atleast 4 characters</span>
 										</div>
@@ -145,7 +133,7 @@
 							</form>
 					</div>
 				</div>
-				
+				-->
 			</div>
 		</div>
 		
@@ -153,23 +141,10 @@
 		  <a class="" href="#myPage" data-toggle="tooltip" title="TOP">
 			<span class="fas fa-angle-up"></span>
 		  </a>
-		  <p>FOOOOOOOOOOOOOOOOOTer</p> 
+		  <br><br><br>
+		  <p>Metanoia</p> 
 		  <br><br><br>
 		</footer>
-		
-		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-		<script>
-		  // Initialize Firebase
-		  var config = {
-			apiKey: "AIzaSyAR0s-aKQn23_igJ99kE82Fjms2e7B4bBU",
-			authDomain: "willbo-kulet.firebaseapp.com",
-			databaseURL: "https://willbo-kulet.firebaseio.com",
-			projectId: "willbo-kulet",
-			storageBucket: "",
-			messagingSenderId: "769425034009"
-		  };
-		  firebase.initializeApp(config);
-		</script>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -180,10 +155,14 @@
 		<!-- [ C D N ] -->
 		<!-- CDN AngularJS-->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.4/moment-timezone-with-data-2010-2020.min.js"></script>
+
 		<!-- AREA Controller JS-->
-		<script src="C:\Users\weayubo\myOwn\Ragnarok MVP Tracker project\Areas\myApp\Scripts\share-controller.js"></script> 
-		<!-- <script src="/scripts/share-controller.js"></script>-->
+		<!--
+		<script src="C:\Users\weayubo\myOwn\Ragnarok MVP Tracker project\Areas\myApp\Scripts\main-controller.js"></script> 
+		-->
+		<script src="/scripts/share-controller.js"></script>
 		
 	</body>
 	
