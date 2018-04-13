@@ -12,53 +12,59 @@ angular
 	function main_controller() {
 		var vm = this;
 		
-		vm.serverTime_Date = new Date("2018/04/14 2:00 PM");
-		vm.serverTime_Datestring = "2018/04/14 14:00 +0200";
 		
+		
+		
+		vm.serverTimedisplay = moment(new Date()).utc().tz("Europe/Oslo").format();//"2018/04/14 2:00 PM"
+		
+		vm.serverTime_Date = moment(new Date()).utc().tz("Europe/Oslo").format("YYYY/MM/DD HH:mm ZZ");//"2018/04/14 2:00 PM"
+		vm.serverTime_Datestring = vm.serverTime_Date;
+		
+		//"2018-04-13T06:03:18.258Z"
 		vm.records = [{
 			Name: "Willbo | Lucio | Chi | Mykonos | Mongo",
 			Country: "Philippines",
 			City: "Asia/Manila",
-			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Manila").format('dddd, MMM Do YYYY h:mm a')
+			Converted_Date_Time: moment(vm.serverTime_Datestring).tz("Asia/Manila").format('dddd, MMM Do YYYY h:mm A')
 		},
 		{
 			Name: "Jaja | Ellie | Cheska | Amanda",
 			Country: "Philippines",
 			City: "Asia/Manila",
-			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Manila").format('dddd, MMM Do YYYY h:mm a')
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Manila").format('dddd, MMM Do YYYY h:mm A')
 		},
 		{
 			Name: "Ethan",
 			Country: "California",
 			City: "America/Los_Angeles",
-			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Los_Angeles").format('dddd, MMM Do YYYY h:mm a')
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Los_Angeles").format('dddd, MMM Do YYYY h:mm A')
 		},
 		{
 			Name: "Mie",
 			Country: "Japan",
 			City: "Asia/Tokyo",
-			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Tokyo").format('dddd, MMM Do YYYY h:mm a')
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Tokyo").format('dddd, MMM Do YYYY h:mm A')
 		},
 		{
 			Name: "Ice | Bear",
 			Country: "America",
 			City: "America/Monterrey",
 			Date_Time: new Date(),
-			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Monterrey").format('dddd, MMM Do YYYY h:mm a')
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Monterrey").format('dddd, MMM Do YYYY h:mm A')
 		},
 		{
 			Name: "Deance",
 			Country: "America",
 			City: "America/Toronto",
 			Date_Time: new Date(),
-			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Toronto").format('dddd, MMM Do YYYY h:mm a')
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Toronto").format('dddd, MMM Do YYYY h:mm A')
 		},
 		{
 			Name: "Snow Bunny",
 			Country: "USA",
 			City: "America/Anchorage",
 			Date_Time: new Date(),
-			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Anchorage").format('dddd, MMM Do YYYY h:mm a')
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Anchorage").format('dddd, MMM Do YYYY h:mm A')
 		}
 		];
 		
