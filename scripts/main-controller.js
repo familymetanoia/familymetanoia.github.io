@@ -40,7 +40,7 @@ angular
 			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Tokyo").format('dddd, MMM Do YYYY h:mm a')
 		},
 		{
-			Name: "Ice",
+			Name: "Ice | Bear",
 			Country: "America",
 			City: "America/Monterrey",
 			Date_Time: new Date(),
@@ -59,13 +59,6 @@ angular
 			City: "America/Anchorage",
 			Date_Time: new Date(),
 			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Anchorage").format('dddd, MMM Do YYYY h:mm a')
-		},
-		{
-			Name: "Bear",
-			Country: "USA",
-			City: "America/Monterrey",
-			Date_Time: new Date(),
-			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Monterrey").format('dddd, MMM Do YYYY h:mm a')
 		}
 		];
 		
