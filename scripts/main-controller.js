@@ -28,12 +28,6 @@ angular
 			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Manila").format('dddd, MMM Do YYYY h:mm a')
 		},
 		{
-			Name: "Boo | Jaja | Lucio | Ellie | Chi | Myk | Cheska | Mongo",
-			Country: "Philippines",
-			City: "Asia/Manila",
-			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Asia/Manila").format('dddd, MMM Do YYYY h:mm a')
-		},
-		{
 			Name: "Ethan",
 			Country: "California",
 			City: "America/Los_Angeles",
