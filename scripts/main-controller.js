@@ -15,7 +15,8 @@ angular
 		
 		
 		
-		vm.serverTimedisplay = moment(new Date()).utc().tz("Europe/Oslo").format();//"2018/04/14 2:00 PM"
+		vm.serverTime = moment(new Date()).utc().tz("Europe/Oslo").format("dddd, MMM Do YYYY h:mm A");//"2018/04/14 2:00 PM"
+		vm.serverTimedisplay = vm.serverTime;
 		
 		vm.serverTime_Date = moment(new Date()).utc().tz("Europe/Oslo").format("YYYY/MM/DD HH:mm ZZ");//"2018/04/14 2:00 PM"
 		vm.serverTime_Datestring = vm.serverTime_Date;
