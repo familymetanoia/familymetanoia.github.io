@@ -12,8 +12,8 @@ angular
 	function main_controller() {
 		var vm = this;
 		
-		vm.serverTime_Date = new Date("2018/04/14 08:00 AM");
-		vm.serverTime_Datestring = "2018/04/14 08:00 +0200";
+		vm.serverTime_Date = new Date("2018/04/14 2:00 PM");
+		vm.serverTime_Datestring = "2018/04/14 14:00 +0200";
 		
 		vm.records = [{
 			Name: "Boo | Jaja | Lucio | Ellie | Chi | Myk | Cheska | Mongo",
@@ -46,8 +46,21 @@ angular
 			City: "America/Toronto",
 			Date_Time: new Date(),
 			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Toronto").format('dddd, MMM Do YYYY h:mm a')
+		},
+		{
+			Name: "Snow Bunny",
+			Country: "USA",
+			City: "America/Anchorage",
+			Date_Time: new Date(),
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Anchorage").format('dddd, MMM Do YYYY h:mm a')
+		},
+		{
+			Name: "Bear",
+			Country: "USA",
+			City: "America/Monterrey",
+			Date_Time: new Date(),
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Monterrey").format('dddd, MMM Do YYYY h:mm a')
 		}
-		
 		];
 		
 		vm.newShares = {};
