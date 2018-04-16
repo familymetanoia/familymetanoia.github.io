@@ -23,7 +23,7 @@ angular
 		
 		//"2018-04-13T06:03:18.258Z"
 		vm.records = [{
-			Name: "Willbo | Lucio | Chi | Mykonos | Mongo",
+			Name: "Willbo | Lucio | Chi | Mykonos | Mongo | Jay",
 			Country: "Philippines",
 			City: "Asia/Manila",
 			Converted_Date_Time: moment(vm.serverTime_Datestring).tz("Asia/Manila").format('dddd, MMM Do YYYY h:mm A')
@@ -62,10 +62,24 @@ angular
 		},
 		{
 			Name: "Snow Bunny",
-			Country: "USA",
+			Country: "America",
 			City: "America/Anchorage",
 			Date_Time: new Date(),
 			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Anchorage").format('dddd, MMM Do YYYY h:mm A')
+		},
+		{
+			Name: "Kriszke",
+			Country: "^_^",
+			City: "Europe/Oslo",
+			Date_Time: new Date(),
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Europe/Oslo").format('dddd, MMM Do YYYY h:mm A')
+		},
+		{
+			Name: "Kriszke",
+			Country: "^_^",
+			City: "America/Kentucky/Monticello",
+			Date_Time: new Date(),
+			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("America/Kentucky/Monticello").format('dddd, MMM Do YYYY h:mm A')
 		}
 		];
 		
