@@ -75,7 +75,7 @@ angular
 			Converted_Date_Time: moment(vm.serverTime_Datestring, 'YYYY/MM/DD HH:mm ZZ').tz("Europe/Oslo").format('dddd, MMM Do YYYY h:mm A')
 		},
 		{
-			Name: "Kriszke",
+			Name: "Zack",
 			Country: "^_^",
 			City: "America/Kentucky/Monticello",
 			Date_Time: new Date(),
